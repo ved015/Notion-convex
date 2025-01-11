@@ -1,5 +1,14 @@
-import { FileText, Book, Target, Brain, CalendarIcon, Trophy, Globe, LayoutTemplate } from 'lucide-react'
-import { FeatureCard } from "./feature-card"
+import {
+  FileText,
+  Book,
+  Target,
+  Brain,
+  CalendarIcon,
+  Trophy,
+  Globe,
+  LayoutTemplate,
+} from "lucide-react";
+import { FeatureCard } from "./feature-card";
 
 const features = [
   {
@@ -50,7 +59,7 @@ const features = [
     icon: LayoutTemplate,
     href: "/templates",
   },
-]
+];
 
 export function FeaturesSection() {
   return (
@@ -58,7 +67,9 @@ export function FeaturesSection() {
       <div className="container px-4 md:px-6">
         <div className="space-y-20">
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-            Everything you need<br />to do your best work.
+            Everything you need
+            <br />
+            to do your best work.
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
@@ -68,6 +79,5 @@ export function FeaturesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
