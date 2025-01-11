@@ -1,9 +1,5 @@
 const DocumentPage = () => {
-    return (
-        <div>
-            Document Page!
-        </div>
-    );
-}
- 
+  return <div>Document Page!</div>;
+};
+
 export default DocumentPage;

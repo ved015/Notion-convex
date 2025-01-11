@@ -58,7 +58,7 @@ const Navbar = () => {
         {isAuthenticated && !isLoading && (
           <>
             <Button
-              variant= "secondary"
+              variant="secondary"
               size="sm"
               asChild
               className={cn(font.className)}
