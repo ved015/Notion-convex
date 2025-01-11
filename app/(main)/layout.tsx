@@ -17,8 +17,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   if (!isAuthenticated) {
     return redirect("/");
   }
+  // bg-[#1F1F1F]
   return (
-    <div className="h-full flex bg-[#1F1F1F]">
+    <div className="h-full flex bg-white">
       <Navigation />
       <main className="flex-1 h-full overflow-y-auto">{children}</main>
     </div>
