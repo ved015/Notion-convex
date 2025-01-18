@@ -30,8 +30,10 @@ import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
 import Navbar from "./navbar";
+import { useRouter } from "next/navigation";
 
 const Navigation = () => {
+  const router = useRouter();
   const search = useSearch();
   const pathname = usePathname();
   const params = useParams();
@@ -119,7 +121,8 @@ const Navigation = () => {
   }, [isMobile]);
 
   const handlecreate = () => {
-    const promise = create({ title: "Untitled" });
+    const promise = create({ title: "Untitled" })
+      .then((documentId) => {router.push(`/documents/${documentId}`)})
 
     toast.promise(promise, {
       loading: "Creating a Note",

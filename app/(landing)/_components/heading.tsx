@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { useConvexAuth } from "convex/react";
+import Link from "next/link";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -11,6 +13,9 @@ const font = Poppins({
 });
 
 const Heading = () => {
+
+  const { isAuthenticated, isLoading} = useConvexAuth();
+
   return (
     <div className={cn("max-w-3xl space-y-4 mt-3")}>
       <h1 className="text-3xl md:text-5xl sm:text-6xl font-bold">
@@ -22,10 +27,12 @@ const Heading = () => {
         <br />
         project management,and collaboration.
       </h3>
-      <Button>
-        Enter Notion
+      {isAuthenticated && !isLoading && (
+        <Button>
+        <Link href="/documents">Enter Notion</Link>
         <ArrowRight className="h-4 w-4 ml-2"></ArrowRight>
-      </Button>
+        </Button>
+      )}
     </div>
   );
 };

@@ -2,11 +2,15 @@
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import React from "react";
 
 import Toolbar from "@/components/ui/toolbar";
 import Cover from "@/components/ui/cover";
+import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
+import { useMemo } from "react";
+
 
 interface DocumentIdProps {
   params: {
@@ -18,8 +22,30 @@ const DocumentIdpage = ({ params }: DocumentIdProps) => {
     documentId: params.documentId,
   });
 
+  const update = useMutation(api.documents.update)
+
+  const onChange = (content: string) => {
+    update({
+      id: params.documentId,
+      content
+    });
+  };
+
+  const Editor = useMemo(() => dynamic(() => import("@/components/ui/editor"),{ssr : false}),[])
+
   if (document === undefined) {
-    return <div>Loading...</div>;
+    return (<div>
+      <Cover.skeleton />
+      <div className="md:max-w-3xl lg:max-w-4xl mx-auto mt-10">
+        <div className="space-y-4 pl-8 pt-4">
+            <Skeleton className="h-14 w-[50%]" />
+            <Skeleton className="h-4 w-[80%]" />
+            <Skeleton className="h-4 w-[40%]" />
+            <Skeleton className="h-4 w-[60%]" />
+        </div>
+      </div>
+    </div>
+    );
   }
 
   if (document === null) {
@@ -31,6 +57,10 @@ const DocumentIdpage = ({ params }: DocumentIdProps) => {
       <Cover url={document.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar intialData={document} />
+        <Editor
+        onChange = {onChange}
+        initialContent = {document.content}
+        />
       </div>
     </div>
   );
