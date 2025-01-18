@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Toaster} from "sonner"
+import { Toaster } from "sonner";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "@/components/providers/convex-provider";
@@ -33,9 +33,9 @@ export default function RootLayout({
       >
         <ConvexClientProvider>
           <EdgeStoreProvider>
-          <Toaster position="bottom-center" />
-          <ModalProvider />
-          {children}
+            <Toaster position="bottom-center" />
+            <ModalProvider />
+            {children}
           </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
