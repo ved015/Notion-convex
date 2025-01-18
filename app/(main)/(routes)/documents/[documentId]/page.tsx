@@ -12,9 +12,7 @@ import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
 
-import { GetServerSideProps } from 'next';
-
-interface DocumentIdProps extends GetServerSideProps {
+interface DocumentIdProps {
   params: {
     documentId: Id<"documents">;
   };
