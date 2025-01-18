@@ -12,8 +12,6 @@ import {
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import "@blocknote/core/fonts/inter.css";
-import { useTheme } from "next-themes";
-// import { HTMLAttributes } from "react";
 
 import { useEdgeStore } from "@/lib/edgestore";
 

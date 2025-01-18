@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Poppins } from "next/font/google";
+// import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useConvexAuth } from "convex/react";
 import Link from "next/link";
