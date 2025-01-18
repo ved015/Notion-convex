@@ -6,7 +6,6 @@ import {
   } from "@blocknote/core";
 
   import {
-      BlockNoteViewRaw,
       useCreateBlockNote
 } from "@blocknote/react";
 
@@ -41,9 +40,9 @@ const Editor = ({
 
 
 
-    const resolvetheme = useTheme();
+    // const resolvetheme = useTheme();
     const editor: BlockNoteEditor = useCreateBlockNote({
-        // editable,
+        editable,
         initialContent: initialContent ? JSON.parse(initialContent) as PartialBlock[] : undefined,
         uploadFile : handleUpload
     });

@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import { useConvexAuth } from "convex/react";
 import Link from "next/link";
 
-const font = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-});
+// const font = Poppins({
+//   subsets: ["latin"],
+//   weight: ["400", "600"],
+// });
 
 const Heading = () => {
 

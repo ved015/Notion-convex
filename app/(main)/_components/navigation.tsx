@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/popover";
 
 import { useParams, usePathname } from "next/navigation";
-import { useRef, useState, useEffect, RefObject } from "react";
+import { useRef, useState, useEffect} from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { cn } from "@/lib/utils";
 
