@@ -9,4 +9,4 @@ This project is a Next.js application that replicates that of Notion. It offers 
 
 **Live Demo:**
 
-Experience the application firsthand at [https://notion-convex.vercel.app/](https://notion-convex.vercel.app/).
+Try the application at [https://notion-convex.vercel.app/](https://notion-convex.vercel.app/).
